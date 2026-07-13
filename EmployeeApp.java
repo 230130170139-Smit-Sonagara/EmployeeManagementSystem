@@ -9,18 +9,22 @@ import java.util.Scanner;
 public class EmployeeApp {
     // List to store employee records dynamically
     static ArrayList<Employee> employees = new ArrayList<>();
+    static {
+        employees.add(new Employee(101, "Alice Johnson", "Engineering"));
+        employees.add(new Employee(102, "Bob Smith", "HR"));
+        employees.add(new Employee(103, "Charlie Davis", "Marketing"));
+    }
     // Scanner for reading user input
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         while (true) {
-            System.out.println("\n--- Employee Management System ---");
-            System.out.println("1. Add Employee");
+            System.out.println("\n1. Add Employee");
             System.out.println("2. View Employees");
             System.out.println("3. Search Employee");
             System.out.println("4. Update Department");
             System.out.println("5. Exit");
-            System.out.print("Enter your choice (1-5): ");
+            System.out.print("Enter choice: ");
 
             int choice = -1;
             try {
@@ -87,9 +91,6 @@ public class EmployeeApp {
             System.out.println("No employees found in the system.");
             return;
         }
-        System.out.println("\n--- Employee Records ---");
-        System.out.println("ID | Name | Department");
-        System.out.println("----------------------");
         for (Employee e : employees) {
             System.out.println(e.id + " | " + e.name + " | " + e.department);
         }

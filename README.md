@@ -1,94 +1,78 @@
-# Core Java - Employee Management System
+ Employee Management System
 
-A clean, robust, and interactive console-based Employee Management System (EMS) built with Core Java. This project demonstrates foundational Java programming concepts, object-oriented design, dynamic data structures, and scanner-based command-line user interfaces.
+A simple, robust, console-based Employee Management System built in Core Java.
 
-This is Task 1 of the Java Developer Internship.
+This application demonstrates fundamental Core Java and Object-Oriented Programming (OOP) concepts such as class creation, constructor usage, ArrayList collections, Scanner for input parsing, loop constructs, conditionals, and modular method-based structure.
 
----
+ Features
+- **Add Employee**: Add new employees with unique IDs, names, and departments.
+- **View Employees**: Display a list of all current employees.
+- **Search Employee**: Search for an employee by their ID.
+- **Update Department**: Update the department of an existing employee by their ID.
+- **Exit**: Safely terminate the application.
 
-## 🚀 Features
+Prerequisites
+- Java SE Development Kit (JDK) 8 or higher (Java 22/23 recommended).
 
-The application supports standard CRUD (Create, Read, Update) operations for employee records:
-1. **Add Employee**: Create new employee records with validation (ensures ID is a positive integer and is unique).
-2. **View Employees**: Display all registered employees in a formatted table.
-3. **Search Employee**: Look up an employee by their unique ID.
-4. **Update Department**: Modify the department of an existing employee.
-5. **Exit**: Gracefully close the application.
+Compilation and Running Instructions
 
----
+1. **Open Terminal / PowerShell** and navigate to the project directory:
+   ```bash
+   cd C:\Users\sonag\EmployeeManagementSystem
+   ```
 
-## 🛠️ Concepts Covered
+2. **Compile the Java files**:
+   ```bash
+   javac Employee.java EmployeeApp.java
+   ```
 
-This project covers core Java programming fundamentals:
-* **Classes & Objects**: Defining an `Employee` class as a data model containing attributes (`id`, `name`, `department`).
-* **Constructors**: Parameterized constructor to initialize the employee attributes.
-* **Java Collections Framework**: Utilizing `ArrayList<Employee>` for dynamic data storage to avoid fixed-size array constraints.
-* **Console Input & Validation**: Processing console inputs with `java.util.Scanner` and implementing exception handling using `InputMismatchException` to prevent application crashes from invalid inputs.
-* **Control Flow & Switches**: Managing the continuous application loop using a `while(true)` loop and the modern Java arrow-based switch expressions (`switch (choice) ->`).
+3. **Run the application**:
+   ```bash
+   java EmployeeApp
+   ```
 
----
+Sample Input/Output Flow
 
-## 📁 Project Structure
-
-The project consists of two key Java source files:
-
-1. **[Employee.java](file:///C:/Users/sonag/EmployeeManagementSystem/Employee.java)**: Represents the employee entity (Data Model).
-2. **[EmployeeApp.java](file:///C:/Users/sonag/EmployeeManagementSystem/EmployeeApp.java)**: Implements the system controller, CRUD methods, and user interaction menu.
-
-Additionally, output screenshots are provided in the directory:
-* **`screenshot_add_view.jpg`**: Screenshot showing adding and viewing employees.
-* **`screenshot_search_update.jpg`**: Screenshot showing searching and updating an employee's department.
-
----
-
-## 💻 How to Compile and Run
-
-Make sure you have Java Development Kit (JDK) 8 or later installed on your system. This project was developed and verified on **Java JDK 22**.
-
-### Compilation
-Open your terminal/command prompt in the project directory and run the following command to compile all Java source files:
-```bash
-javac Employee.java EmployeeApp.java
+Main Menu
+Upon starting, the application presents the following menu options:
+```text
+1. Add Employee
+2. View Employees
+3. Search Employee
+4. Update Department
+5. Exit
+Enter choice:
 ```
 
-### Execution
-Run the compiled application using:
-```bash
-java EmployeeApp
+1. View All Employees (Option 2)
+The application comes pre-populated with a few sample records for convenience:
+```text
+Enter choice: 2
+101 | Alice Johnson | Engineering
+102 | Bob Smith | HR
+103 | Charlie Davis | Marketing
 ```
 
-For convenience, you can also double-click/run the provided runner script if on Windows:
-* **`run.bat`**
-
-### Automated Verification
-To run the application with a pre-configured sequence of operations (adding, viewing, searching, updating, and exiting):
-```bash
-# On Windows Command Prompt:
-java EmployeeApp < test_input.txt
-
-# On PowerShell:
-Get-Content test_input.txt | java EmployeeApp
+2. Add a New Employee (Option 1)
+```text
+Enter choice: 1
+ID: 104
+Name: Diana Prince
+Department: Quality Assurance
+Employee added successfully.
 ```
 
+3. Search Employee by ID (Option 3)
+```text
+Enter choice: 3
+Enter ID: 101
+Found: Alice Johnson (Engineering)
+```
 
----
-
-## 🔄 Program Flow & Screenshots
-
-### 1. Adding and Viewing Employees
-When you launch the app, you will be presented with a menu. You can add new employee records and list them:
-
-![Adding and Viewing Employees](screenshot_add_view.jpg)
-
-### 2. Searching and Updating Employee Records
-You can quickly look up an employee by their ID and modify their department. Changes are immediately reflected in the system:
-
-![Searching and Updating Department](screenshot_search_update.jpg)
-
----
-
-## 🧪 Error Handling & Enhancements Included
-Compared to simple template code, this project includes several real-world developer refinements:
-* **Unique ID Check**: The system prevents duplicate IDs from being registered.
-* **Crash-Resistant Inputs**: If a user enters non-integer values for IDs or menu choices, the application handles `InputMismatchException` gracefully without crashing, clears the scanner buffer, and prompts the user again.
-* **Empty List Handling**: Prints a user-friendly message when attempting to view employees while the registry is empty.
+4. Update Employee Department (Option 4)
+```text
+Enter choice: 4
+Employee ID: 102
+New Department: Finance
+Department updated.
+```
